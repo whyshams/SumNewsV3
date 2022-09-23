@@ -17,7 +17,7 @@ import Loading from '../../../components/Loading';
 
 
 const Category= ({Data,CategoryBd}) => {
-    const {bdNewsDataCat, setBdNewsDataCat,setCopied,setSumText,setImage,text, setText,setDirectsumInput,directSumData,setDirectSumData,clear,sumLoading} = useResultContext();
+    const {bdNewsDataCat, setBdNewsDataCat,setCopied,setSumText,setDirectsumInput,directSumData,setDirectSumData,clear,sumLoading} = useResultContext();
     const [bdCat,setBdCat] = useState('news');
     const [passData,setPassData] = useState('');
     
