@@ -159,7 +159,7 @@ const paginate = pageNumber => setCurrentPage(pageNumber);
         <div  className='row col-md-12 '>
         <div className='col-md-4 col-12'>
           
-          <img className='rounded nationalImage' src={data.media} alt={data.title}/>
+          <img className='rounded BDImage' src={data.media} alt={data.title}/>
 
         </div>
         <div className='col-md-8 '>
@@ -189,22 +189,18 @@ const paginate = pageNumber => setCurrentPage(pageNumber);
 
 
                               </div>
-                                      
-                                        <CopyToClipboard onCopy={()=> {router.push('/EditImage/Editor')}} text={data.media}>
+                                      {/*  <CopyToClipboard onCopy={()=> {router.push('/EditImage/Editor')}} text={data.media}>
                                         <div className='col-12 col-md-6 d-md-flex d-flex justify-content-center'>
                                         <button onClick={()=> {setText(data.media)}} className='btn d-flex CopyButton mx-2 px-5'>Edit This Photo</button>
                                         </div>
     
                                         </CopyToClipboard>
+                                      */}
                                       
                                  
-                              <div className=' col-12 col-md-6 d-flex d-md-flex justify-content-center'>
-                              <a target="_blank" rel="noreferrer" className=' btn  CopyButton mx-2 px-5' href={data.link}>Go To Link</a>
-
-
-                              </div>
+                              
                                </div>
-                               <button onClick={()=> {setDirectsumInput(data.url)}}>regerg</button>
+                              
 
 
         <hr/>

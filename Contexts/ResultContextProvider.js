@@ -25,7 +25,7 @@ export default function ResultContextProvider  ({children})  {
     
 
     const [Loading, setLoading] = useState(false)
-    const [sumLoading, setSumLoading] = useState(false)
+    
 
 
     const [mobile,setMobile] = useState(false);
@@ -41,7 +41,6 @@ export default function ResultContextProvider  ({children})  {
     const [clear,setClear] = useState(false)
 
     const getData = async () => {
-        setLoading(true)
         await axios.request(
            {
              method: 'POST',
@@ -52,7 +51,7 @@ export default function ResultContextProvider  ({children})  {
                'X-RapidAPI-Host': 'tldrthis.p.rapidapi.com'
                },
              data: `{"url":"${sumInput}","min_length":100,"max_length":300,"is_detailed":true}`
-         }).then((response)=>setSumData(response.data)).catch(err => setSumError(true)).finally(() => setLoading(false))
+         }).then((response)=>setSumData(response.data)).catch(err => setSumError(true))
  
        }
 
@@ -60,7 +59,8 @@ export default function ResultContextProvider  ({children})  {
 
 
        const getData2 = async () => {
-        setSumLoading(true)
+        setLoading(true)
+        
         await axios.request(
            {
              method: 'POST',
@@ -71,14 +71,17 @@ export default function ResultContextProvider  ({children})  {
                'X-RapidAPI-Host': 'tldrthis.p.rapidapi.com'
                },
              data: `{"url":"${directSumInput}","min_length":100,"max_length":300,"is_detailed":true}`
-         }).then((response)=>setDirectSumData(response.data)).then(()=> setClear(false)).catch(err => console.log(err)).finally(() => setSumLoading(false))
+         }).then((response)=>setDirectSumData(response.data)).then(()=> setClear(false)).catch(err => console.log(err)).finally(() => setLoading(false))
  
        }
  
      
     useEffect(() => {
     if(sumInput !== ''){
+     
+
       getData();
+      
     }
       },[sumInput])
     
@@ -87,7 +90,7 @@ export default function ResultContextProvider  ({children})  {
       useEffect(() => {
         if(directSumInput !== ''){
           getData2();
-          
+         
         }
           },[directSumInput])
         
@@ -96,7 +99,7 @@ export default function ResultContextProvider  ({children})  {
 
 
   return (
-    <ResultContext.Provider value={{mobile,setMobile,text, setText,image, setImage,Loading,setLoading,sumError,sumLoading,bdNewsData,setBdNewsData,bdNewsDataDiv,setBdNewsDataDiv,catData,setCatData,sumData, setSumData,sumInput,setSumInput,sumText,setSumText,copied,setCopied,bdNewsDataCat, setBdNewsDataCat,setDirectsumInput,directSumData,setDirectSumData,clear,setClear}}>
+    <ResultContext.Provider value={{mobile,setMobile,text, setText,image, setImage,Loading,setLoading,sumError,bdNewsData,setBdNewsData,bdNewsDataDiv,setBdNewsDataDiv,catData,setCatData,sumData, setSumData,sumInput,setSumInput,sumText,setSumText,copied,setCopied,bdNewsDataCat, setBdNewsDataCat,setDirectsumInput,directSumData,setDirectSumData,clear,setClear}}>
           {children}
         </ResultContext.Provider>
   )

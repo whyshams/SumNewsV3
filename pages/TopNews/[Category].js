@@ -199,13 +199,9 @@ const paginate = pageNumber => setCurrentPage(pageNumber);
                               </div>
                                       
                                  
-                              <div className=' col-12 col-md-6 d-flex d-md-flex justify-content-center'>
-                              <a target="_blank" rel="noreferrer" className=' btn  CopyButton mx-2 px-5' href={res.url}>Go To Link</a>
-
-
-                              </div>
+                           
                                </div>
-                               <button onClick={()=> {setDirectsumInput(data.url)}}>regerg</button>
+                             
 
 
                   </div> 

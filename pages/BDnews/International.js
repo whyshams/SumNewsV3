@@ -14,12 +14,12 @@ import Loading from '../../components/Loading';
 
 const International = ({Data}) => {
 
-    const {bdNewsData,setBdNewsData,setCopied,setSumText,setDirectsumInput,directSumData,setDirectSumData,clear} = useResultContext();
+    const {bdNewsData,setBdNewsData,setDirectsumInput,directsumInput,setLoading,directSumData,setDirectSumData,clear} = useResultContext();
     setBdNewsData(Data);
     console.log(directSumData)
     const router = useRouter()
 
-
+    const [ load,setLoad ] = useState(false);
     useEffect(()=>{
         if(clear){
           setDirectSumData(null)
@@ -71,7 +71,7 @@ const paginate = pageNumber => setCurrentPage(pageNumber);
                           <div className='content '>
                             <div className='col-md-12  d-md-flex '>
                             <div className='col-md-4 col-12 d-md-flex justify-content-center align-items-center'>
-                            <img className='newsapiimg rounded' src={data.urlToImage}  alt={data.title}  />
+                            <img className='BDImage rounded' src={data.urlToImage}  alt={data.title}  />
 
                             </div>
                             <div className='col-md-8 col-12'>
@@ -115,7 +115,7 @@ const paginate = pageNumber => setCurrentPage(pageNumber);
                                  
                               <div className=' col-12 col-md-6 d-flex d-md-flex justify-content-center'>
                               <a target="_blank" rel="noreferrer" className=' btn btn-danger mx-2 px-5' href={data.url}>Go To Link</a>
-                               <button className='btn btn-warning p-2' onClick={()=> {setDirectsumInput(data.url)}}>Summarize</button>
+                               <button className='btn btn-warning p-2' onClick={()=> {setDirectsumInput(data.url) }}>Summarize</button>
 
 
                               </div>
@@ -151,7 +151,7 @@ const paginate = pageNumber => setCurrentPage(pageNumber);
                             {
           directSumData && <Summary directSumData={directSumData} /> 
         }
-                     
+       
                         <div className='mt-3'>
                         <div className='pagination  d-flex flex-wrap justify-content-center alig-items-center'>
                                   <Pagination

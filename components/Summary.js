@@ -6,10 +6,10 @@ const Summary = ({directSumData}) => {
   const {clear,setClear} = useResultContext();
   return (
     <div>
-    
+                
       
                 {
-                  directSumData && <div className='modu'>
+                  directSumData ? <div className='modu'>
                     
                   <div className=' col-md-12'>
                     <button className='btn btn-danger p-2' onClick={() => {setClear(true)}}>Close</button>
@@ -41,7 +41,14 @@ const Summary = ({directSumData}) => {
                     </div>
                     
                     
-                  </div>
+                  </div> :<div>
+                  <button className='btn btn-danger p-2' onClick={() => {setClear(true)}}>Close</button>
+
+                    <h1>
+                    Failed to load Summary :(
+
+                    </h1>
+                      </div>
                 }
 
     </div>

@@ -141,7 +141,7 @@ const paginate = pageNumber => setCurrentPage(pageNumber);
           <div  className='row col-md-12 '>
           <div className='col-md-4 col-12'>
             
-            <img className='rounded nationalImage ' src={data.media} alt={data.title}/>
+            <img className='rounded BDImage ' src={data.media} alt={data.title}/>
   
           </div>
           <div className='col-md-8 '>
