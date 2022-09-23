@@ -4,13 +4,13 @@ import moment from 'moment';
 import {useRouter} from 'next/router'
 import { useResultContext } from '../../../Contexts/ResultContextProvider';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import Pagination from '../../../Components/Pagination';
+
 import {FaAngleDown} from 'react-icons/fa';
 import { IconContext } from "react-icons";
 import Head from 'next/head';
 import Summary from '../../../components/Summary';
 
-
+import Pagination from '../../../Components/Pagination';
 
 
 

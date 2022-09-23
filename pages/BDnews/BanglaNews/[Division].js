@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import Pagination from '../../../components/Pagination';
+
 import { useRouter } from 'next/router';
 import axios from 'axios';
 import moment from 'moment';
@@ -7,7 +7,7 @@ import {FaAngleDown} from 'react-icons/fa';
 import { IconContext } from "react-icons";
 import Head from 'next/head';
 
-
+import Pagination from '../../../Components/Pagination';
 
 
 

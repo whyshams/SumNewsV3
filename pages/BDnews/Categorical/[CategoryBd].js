@@ -9,7 +9,7 @@ import { IconContext } from "react-icons";
 import Head from 'next/head';
 import Pagination from '../../../components/Pagination';
 import Summary from '../../../components/Summary';
-import Loading from '../../../components/Loading';
+
 
 
 
