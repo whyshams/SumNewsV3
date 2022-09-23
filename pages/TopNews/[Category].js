@@ -4,7 +4,7 @@ import { useResultContext } from '../../Contexts/ResultContextProvider';
 import axios from 'axios';
 import moment from 'moment';
 import { useRouter } from 'next/router';
-import Pagination from '../../Components/Pagination';
+import Pagination from '../../components/Pagination';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 import {FaAngleDown} from 'react-icons/fa';

@@ -10,7 +10,7 @@ import { IconContext } from "react-icons";
 import Head from 'next/head';
 import Summary from '../../../components/Summary';
 
-import Pagination from '../../../Components/Pagination.js';
+import Pagination from '../../../components/Pagination';
 
 
 

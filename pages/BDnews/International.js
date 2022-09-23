@@ -4,7 +4,7 @@ import axios from 'axios';
 import moment from 'moment';
 import { useRouter } from 'next/dist/client/router';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import Pagination from '../../Components/Pagination';
+import Pagination from '../../components/Pagination';
 import Head from 'next/head';
 import Summary from '../../components/Summary';
 import Loading from '../../components/Loading';

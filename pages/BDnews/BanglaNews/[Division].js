@@ -7,7 +7,7 @@ import {FaAngleDown} from 'react-icons/fa';
 import { IconContext } from "react-icons";
 import Head from 'next/head';
 
-import Pagination from '../../../Components/Pagination';
+import Pagination from '../../../components/Pagination';
 
 
 
