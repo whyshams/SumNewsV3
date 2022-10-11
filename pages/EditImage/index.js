@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const EditorMenu = () => {
   return (
-    <div>
+    <div className='d-flex justify-content-center align-items-center'>
            <div className='editormenu'>
     <Link href="/EditImage/Upload">
     <nav className='btn btn-warning p-3 '>
@@ -12,7 +12,7 @@ const EditorMenu = () => {
     </Link>
     <h1>OR</h1>
     <Link href="/EditImage/Editor">
-    <nav className='btn btn-warning p-3 '>
+    <nav className='btn btn-warning p-3 text-center'>
         Paste Image Link to edit
     </nav>
     </Link>

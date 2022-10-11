@@ -12,11 +12,13 @@ import { IconContext } from "react-icons";
 import Head from 'next/head';
 import Summary from '../../components/Summary';
 
+import LoAding from '../../components/LoAding';
+
 
 
 
 const Category = ({Data,Category}) => {
-    const {catData, setCatData,setCopied,setSumText,directSumData,setDirectSumData,setDirectsumInput,clear} = useResultContext();
+    const {catData, setCatData,setCopied,setSumText,directSumData,setDirectSumData,setDirectsumInput,clear,Loading} = useResultContext();
     const [cat,setCat] = useState('')
     setCatData(Data);
     const router = useRouter();
@@ -128,7 +130,10 @@ const paginate = pageNumber => setCurrentPage(pageNumber);
 
       </div>
       <hr className='text-muted'/>
-
+      {
+      Loading ? <h1 className='modu'><LoAding/></h1> : <div></div>
+     }
+      
       
       <hr className='text-muted'/>
       {

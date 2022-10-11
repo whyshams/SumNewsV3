@@ -44,7 +44,7 @@ export default function ResultContextProvider  ({children})  {
         await axios.request(
            {
              method: 'POST',
-             url : `https://tldrthis.p.rapidapi.com/v1/model/abstractive/summarize-url/`,
+             url : `https://tldrthis.p.rapidapi.com/v1/model/extractive/summarize-url/`,
              headers: {
                'content-type': 'application/json',
                'X-RapidAPI-Key': '42ca516b7amshb3430e4d7c91715p1b5024jsnb40e2e325bd9',
@@ -64,7 +64,7 @@ export default function ResultContextProvider  ({children})  {
         await axios.request(
            {
              method: 'POST',
-             url : "https://tldrthis.p.rapidapi.com/v1/model/abstractive/summarize-url/",
+             url : "https://tldrthis.p.rapidapi.com/v1/model/extractive/summarize-url/",
              headers: {
                'content-type': 'application/json',
                'X-RapidAPI-Key': '42ca516b7amshb3430e4d7c91715p1b5024jsnb40e2e325bd9',

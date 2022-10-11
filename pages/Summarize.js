@@ -25,7 +25,7 @@ const Summarize = () => {
           <div className=' mt-3 row '>
         <div className=' col-md-12'> 
         <div className='MainPageTitle'>
-          <h2 className=' d-flex justify-content-center align-items-center'>
+          <h2 className='m-3 d-flex justify-content-center align-items-center'>
             Summarizer Tool 
           </h2>
         </div>
@@ -33,15 +33,15 @@ const Summarize = () => {
       
       </div>
         
-          <div className='sumInput justify-content-center align-items-center d-flex'>
-            <div className='justify-content-center align-items-center d-flex'>
+          <div className=''>
+            <div className=''>
             <div className='col-12 d-block ' >
              <form onSubmit={handleSubmit} >
-                      <div className=''>
+                      <div className=' text-center d-flex justify-content-center align-items-center'>
                           <input className='sumInput ' placeholder='Input LINK for Summarization...' type="text" value={sumText} onChange={(e)=>setSumText(e.target.value)} />
                       </div>
-                      <div className=' '>
-                          <button  type='submit' className='btn btn-success CopyButton'>Submit</button>
+                      <div className='text-center d-flex justify-content-center align-items-center m-3 '>
+                          <button  type='submit' className='btn btn-success CopyButton p-2'>Submit</button>
                       </div>
             </form>
      </div>
@@ -73,12 +73,13 @@ const Summarize = () => {
                         <div className='m-2 d-flex justify-content-center align-items-center'>
                           <img className='sumImage rounded' src={sumData.article_image} alt={sumData.article_title}/>
                         </div>
-                        <div className=' summary d-flex justify-content-center align-items-center'>
+                        <div className=' summary  justify-content-center align-items-center'>
+                        <h4 className='summary1 d-flex justify-content-center align-items-center'>Summary : </h4>
+
                         {
-                      sumData.summary.map(dat => (
+                      sumData?.summary.map(dat => (
                         <div key={dat}>
-                          <h4 className='summary1 d-flex justify-content-center align-items-center'>Summary : </h4>
-                        <p className='summary2 d-flex justify-content-center align-items-center'>{dat}</p>
+                        <p className='summary2 d-block justify-content-center align-items-center'>{dat}</p>
                         </div>
                       ))
                     }

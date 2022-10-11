@@ -1,8 +1,9 @@
 import {useState} from 'react';
 import { useResultContext } from '../Contexts/ResultContextProvider';
-import Loading from './Loading';
-
+import Loading from './LoAding';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 const Summary = ({directSumData}) => {
+
   const {clear,setClear} = useResultContext();
   return (
     <div>
@@ -21,11 +22,17 @@ const Summary = ({directSumData}) => {
                         <div className='m-2 d-flex justify-content-center align-items-center'>
                           <img className='sumImage rounded' src={directSumData.article_image} alt={directSumData.article_title}/>
                         </div>
-                        <div className=' summary d-flex justify-content-center align-items-center'>
+                        <CopyToClipboard text={directSumData.article_image} >
+                                       <div className='d-flex justify-content-center align-items-center'>
+                                       <button className='btn btn-warning p-2 m-3 '>Copy image Link</button>
+                                       </div>
+                         </CopyToClipboard>
+                        <div className=' summary justify-content-center align-items-center'>
+                        <h4 className='summary1 d-flex justify-content-center align-items-center'>Summary : </h4>
+
                         {
                       directSumData?.summary.map(dat => (
                         <div key={dat}>
-                          <h4 className='summary1 d-flex justify-content-center align-items-center'>Summary : </h4>
                         <p className='summary2 d-flex justify-content-center align-items-center'>{dat}</p>
                         </div>
                       ))
@@ -44,8 +51,8 @@ const Summary = ({directSumData}) => {
                   </div> :<div>
                   <button className='btn btn-danger p-2' onClick={() => {setClear(true)}}>Close</button>
 
-                    <h1>
-                    Failed to load Summary :(
+                    <h1 className='modu'>
+                    Loading...
 
                     </h1>
                       </div>

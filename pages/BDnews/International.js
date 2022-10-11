@@ -7,14 +7,14 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 import Pagination from '../../components/Pagination';
 import Head from 'next/head';
 import Summary from '../../components/Summary';
-import Loading from '../../components/Loading';
+import LoAding from '../../components/LoAding';
 
 
 
 
 const International = ({Data}) => {
 
-    const {bdNewsData,setBdNewsData,setDirectsumInput,directsumInput,setLoading,directSumData,setDirectSumData,clear} = useResultContext();
+    const {bdNewsData,setBdNewsData,setDirectsumInput,directsumInput,Loading,directSumData,setDirectSumData,clear} = useResultContext();
     setBdNewsData(Data);
     console.log(directSumData)
     const router = useRouter()
@@ -146,6 +146,10 @@ const paginate = pageNumber => setCurrentPage(pageNumber);
                         </div>
                          
                         ))}
+                         {
+      Loading ? <h1 className='modu'><LoAding/></h1> : <div></div>
+     }
+      
                             {
           directSumData && <Summary directSumData={directSumData} /> 
         }

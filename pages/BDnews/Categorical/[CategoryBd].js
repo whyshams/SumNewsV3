@@ -9,6 +9,7 @@ import { IconContext } from "react-icons";
 import Head from 'next/head';
 import Pagination from '../../../components/Pagination';
 import Summary from '../../../components/Summary';
+import LoAding from '../../../components/LoAding';
 
 
 
@@ -17,7 +18,7 @@ import Summary from '../../../components/Summary';
 
 
 const Category= ({Data,CategoryBd}) => {
-    const {bdNewsDataCat, setBdNewsDataCat,setCopied,setSumText,setDirectsumInput,directSumData,setDirectSumData,clear,sumLoading} = useResultContext();
+    const {bdNewsDataCat, setBdNewsDataCat,setCopied,setSumText,setDirectsumInput,directSumData,setDirectSumData,clear,Loading} = useResultContext();
     const [bdCat,setBdCat] = useState('news');
     const [passData,setPassData] = useState('');
     
@@ -142,7 +143,9 @@ const paginate = pageNumber => setCurrentPage(pageNumber);
       
       <hr className='text-muted'/>
 
-     
+     {
+      Loading ? <h1 className='modu'><LoAding/></h1> : <div></div>
+     }
       
       {
           directSumData && <Summary directSumData={directSumData} />

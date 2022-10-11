@@ -11,12 +11,12 @@ import Head from 'next/head';
 import Summary from '../../../components/Summary';
 
 import Pagination from '../../../components/Pagination';
-
+import LoAding from '../../../components/LoAding';
 
 
 const National = ({Data,National}) => {
   const router = useRouter();
-const {bdNewsDataDiv,setBdNewsDataDiv,setCopied,setSumText,directSumData,setDirectSumData,setDirectsumInput,clear} = useResultContext();
+const {bdNewsDataDiv,setBdNewsDataDiv,setCopied,Loading,directSumData,setDirectSumData,setDirectsumInput,clear} = useResultContext();
 
 
     const [divText,setDivText] = useState('');
@@ -122,6 +122,9 @@ const paginate = pageNumber => setCurrentPage(pageNumber);
       </div>
       <hr className='text-muted'/>
 
+      {
+      Loading ? <h1 className='modu'><LoAding/></h1> : <div></div>
+     }
       
         
       <hr className='text-muted'/>
@@ -140,7 +143,7 @@ const paginate = pageNumber => setCurrentPage(pageNumber);
         <div  className='row col-md-12 '>
         <div className='col-md-4 col-12'>
           
-          <img className='rounded nationalImage ' src={data.media} alt={data.title}/>
+          <img className='rounded nationalImage BDImage' src={data.media} alt={data.title}/>
 
         </div>
         <div className='col-md-8 '>
