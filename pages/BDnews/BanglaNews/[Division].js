@@ -6,6 +6,7 @@ import moment from 'moment';
 import {FaAngleDown} from 'react-icons/fa';
 import { IconContext } from "react-icons";
 import Head from 'next/head';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 import Pagination from '../../../components/Pagination';
 
@@ -173,8 +174,11 @@ const paginate = pageNumber => setCurrentPage(pageNumber);
                                         
                                    
                                 <div className=' col-12 col-md-12 d-flex d-md-flex justify-content-center'>
-                                <a target="_blank" rel="noreferrer" className=' btn  CopyButton mx-2 px-5' href={data.link}>Go To Link</a>
-  
+                                <a target="_blank" rel="noreferrer" className=' btn  CopyButton mx-2 px-5' href={data.link}>Read Full News</a>
+                                <CopyToClipboard text={data.media} >
+                                       
+                                       <button className='btn btn-warning p-2 m-3'>Copy image Link</button>
+                                                                           </CopyToClipboard>
   
                                 </div>
                                  </div>
@@ -182,9 +186,11 @@ const paginate = pageNumber => setCurrentPage(pageNumber);
           <hr/>
   
             </div>
+            
   
   
           </div>
+        
   
   </div>
   

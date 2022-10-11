@@ -105,18 +105,16 @@ const paginate = pageNumber => setCurrentPage(pageNumber);
                     
                             <div className='row'>
                                       
-                                      <CopyToClipboard text={data.url} onCopy={()=>{setCopyText(data.url)}}>
-                                        <div className='col-12 col-md-6 d-md-flex d-flex justify-content-center'>
-                                       
-                                        </div>
-    
-                                        </CopyToClipboard>
+                                  
                                       
                                  
                               <div className=' col-12 col-md-6 d-flex d-md-flex justify-content-center'>
-                              <a target="_blank" rel="noreferrer" className=' btn btn-danger mx-2 px-5' href={data.url}>Go To Link</a>
+                              <a target="_blank" rel="noreferrer" className=' btn btn-danger mx-2 px-5' href={data.url}>Read Full News</a>
                                <button className='btn btn-warning p-2' onClick={()=> {setDirectsumInput(data.url) }}>Summarize</button>
-
+                               <CopyToClipboard text={data.urlToImage} >
+                                       
+                                       <button className='btn btn-warning p-2 m-3'>Copy image Link</button>
+                                                                           </CopyToClipboard>
 
                               </div>
                                </div>

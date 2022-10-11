@@ -184,9 +184,13 @@ const paginate = pageNumber => setCurrentPage(pageNumber);
                                       
                                      
                                         <div className=' col-12 col-md-6 d-flex d-md-flex justify-content-center'>
-                              <a target="_blank" rel="noreferrer" className=' btn btn-danger mx-2 px-5' href={data.link}>Go To Link</a>
+                              <a target="_blank" rel="noreferrer" className=' btn btn-danger mx-2 px-5' href={data.link}>Read Full News</a>
                                <button className='btn btn-warning p-2' onClick={()=> {setDirectsumInput(data.link)}}>Summarize</button>
-
+                               <CopyToClipboard text={data.media} >
+                                       
+                                       <button className='btn btn-warning p-2 m-3'>Copy image</button>
+                                                                           </CopyToClipboard>
+  
 
                               </div>
                                       {/*  <CopyToClipboard onCopy={()=> {router.push('/EditImage/Editor')}} text={data.media}>
