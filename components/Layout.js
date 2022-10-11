@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { useState,useEffect } from "react";
 import NavBar from "./NavBar";
-import LoAding from "./Loading";
+import LoAding from "./LoAding";
 import Footer from './Footer';
 import nProgress from "nprogress";
 import  Router  from "next/router";
