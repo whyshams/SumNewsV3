@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { useState,useEffect } from "react";
 import NavBar from "./NavBar";
-import Loading from "./Loading";
+import LoAding from "./Loading";
 import Footer from './Footer';
 import nProgress from "nprogress";
 import  Router  from "next/router";
@@ -52,7 +52,7 @@ const Layout = ({children}) => {
         </header>
        
 
-        {loading ? <Loading/> :<div className="col-12 col-lg-12"> {children} </div>}
+        {loading ? <LoAding/> :<div className="col-12 col-lg-12"> {children} </div>}
 
      </div>
      <footer className='col-lg-12 col-12'>
